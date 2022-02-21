@@ -1,8 +1,17 @@
 #### gRPC
 
 ##### INSTALL
-
 ````
-npm install -g grpc-tools
 npm install
+````
+
+##### GENERATE
+````
+npm run generate
+npm run generate:ts
+````
+
+##### RUN
+````
+npm run dev
 ````

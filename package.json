@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --watch \"./**\"  --ext \"ts,json\" --exec \"ts-node app.ts\"",
     "generate": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./generated --grpc_out=generate_package_definition:./generated *.proto",
-    "test": "grpc_tools_node_protoc --plugin=protoc-gen-ts.cmd=./node_modules/.bin/grpc_tools_node_protoc_ts --ts_out=./generated -I ./ *.proto",
+    "generate:ts": "grpc_tools_node_protoc --plugin=protoc-gen-ts.cmd=./node_modules/.bin/grpc_tools_node_protoc_ts --ts_out=./generated -I ./ *.proto",
     "asd": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./ --grpc_out=./ --grpc-ts_out=./ --plugin=protoc-gen-grpc=node_modules/grpc-tools/bin/grpc_node_plugin --ts_out=./ *.proto"
   },
   "keywords": [],
