@@ -1,0 +1,28 @@
+{
+  "name": "grpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "nodemon --watch \"./**\"  --ext \"ts,json\" --exec \"ts-node app.ts\"",
+    "generate": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./generated --grpc_out=generate_package_definition:./generated *.proto",
+    "test": "grpc_tools_node_protoc --plugin=protoc-gen-ts.cmd=./node_modules/.bin/grpc_tools_node_protoc_ts --ts_out=./generated -I ./ *.proto",
+    "asd": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./ --grpc_out=./ --grpc-ts_out=./ --plugin=protoc-gen-grpc=node_modules/grpc-tools/bin/grpc_node_plugin --ts_out=./ *.proto"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/google-protobuf": "^3.15.5",
+    "google-protobuf": "^3.19.4",
+    "grpc_tools_node_protoc_ts": "^5.3.2",
+    "grpc-tools": "^1.11.2",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.5.5",
+    "grpc": "^1.24.11"
+  }
+}
